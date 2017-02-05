@@ -125,7 +125,7 @@ class InvitationEditor extends React.Component {
 
                 <input id="copy-button" type="button" 
                   onClick={this.copyText} 
-                  className="submit-btn" value="Copy Message"/>
+                  className="submit-btn" value="Copy Invitation"/>
            
                 <textarea id="holdtext" style={InvitationEditorPreviewTextStyle}>
                 </textarea>
