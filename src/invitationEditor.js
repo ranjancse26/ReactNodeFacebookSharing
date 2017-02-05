@@ -74,15 +74,13 @@ class InvitationEditor extends React.Component {
 
     copyText(){
         var previewText = document.getElementById('previewText');
-        if(previewText != null){            
-          var range = document.createRange();
-          var currSelection = window.getSelection();
-
-          range.selectNode(previewText);
-          currSelection.addRange(range);
-          
-          document.execCommand('copy');          
-          currSelection.removeAllRanges();
+        var holdtext = document.getElementById('holdtext');
+        
+        if(previewText != null && holdtext != null)
+        {            
+          holdtext.value = previewText.innerText.replace("\"","");
+          holdtext.select();   
+          document.execCommand('copy');    
         }
     }
 
@@ -129,6 +127,9 @@ class InvitationEditor extends React.Component {
                   onClick={this.copyText} 
                   className="submit-btn" value="Copy Message"/>
            
+                <textarea id="holdtext" style={InvitationEditorPreviewTextStyle}>
+                </textarea>
+
                 <div id="previewText" ref='previewText'
                 style={InvitationEditorPreviewTextStyle}></div>
 
