@@ -4,8 +4,8 @@
   "description": "A Component React for Facebook Sharing",
   "main": "dist/facebook-login.js",
   "scripts": {
-    "prod": "NODE_ENV=production webpack --config ./webpack.config.js --progress --colors",
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build": "NODE_ENV=production webpack --config ./webpack.config.js --progress --colors",
+    "start": "node ./app.js",
     "postinstall": "webpack -p"
   },
   "repository": {
@@ -70,6 +70,6 @@
     "express": "^4.13.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "webpack-dev-server": "^1.9.0"
+    "webpack-dev-server": "^1.9.0",
   }
 }
