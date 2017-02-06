@@ -7,12 +7,14 @@ export default class FacebookPrivateMessage extends React.Component
     buttonStyle: PropTypes.object,
     icon: PropTypes.any,
     isDisabled: PropTypes.bool,
-    href: PropTypes.string
+    href: PropTypes.string,
+    value: PropTypes.string
   }
 
   static defaultProps = {
      href: "",
-     isDisabled: false
+     isDisabled: false,
+     value: 'Private Message'
   }
 
   constructor (props) {
@@ -31,9 +33,7 @@ export default class FacebookPrivateMessage extends React.Component
           if (response.authResponse) {
             FB.ui({
               method: 'send',
-              name : 'App Testing using name parameter',
               link: privateMessageButton.getAttribute("href"),
-              description : 'Python IoT project'
             }, function(response){});
           }
      }, {scope: 'email,public_profile,publish_actions', 
@@ -49,7 +49,7 @@ export default class FacebookPrivateMessage extends React.Component
   }
 
   render() {
-    const { buttonStyle, icon, href } = this.props;
+    const { buttonStyle, icon, href, value } = this.props;
     const isIconString = typeof icon === 'string';
     return (
     <div>
@@ -68,7 +68,7 @@ export default class FacebookPrivateMessage extends React.Component
             )}
             {icon && !isIconString && icon}
 
-            Private Message
+            {value}
         </button>
         </span>
      </div>

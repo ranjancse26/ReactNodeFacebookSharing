@@ -7,12 +7,14 @@ export default class FacebookShare extends React.Component
     buttonStyle: PropTypes.object,
     icon: PropTypes.any,
     isDisabled: PropTypes.bool,
-    href: PropTypes.string
+    href: PropTypes.string,    
+    value: PropTypes.string
   }
 
   static defaultProps = {
      href: "",
-     isDisabled: false
+     isDisabled: false,
+     value: 'Invite a friend'
   }
 
   constructor (props) {
@@ -51,7 +53,7 @@ export default class FacebookShare extends React.Component
   }
 
   render() {
-    const { buttonStyle, icon, href } = this.props;
+    const { buttonStyle, icon, href, value } = this.props;
     const isIconString = typeof icon === 'string';
     return (
     <div>
@@ -70,7 +72,7 @@ export default class FacebookShare extends React.Component
             )}
             {icon && !isIconString && icon}
 
-            Invite a friend
+            {value}
         </button>
         </span>
      </div>
