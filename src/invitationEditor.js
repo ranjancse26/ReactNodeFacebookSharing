@@ -1,26 +1,21 @@
 import React, { PropTypes } from 'react';
 
-var InvitationEditorTextAreaStyle = {
-    height: "250px",
-    width: "500px"
-}
-
-var InvitationEditorPreviewTextStyle = {
-    opacity : "0"
-}
-
-class InvitationEditor extends React.Component {
+export default class InvitationEditor extends React.Component {
     
     static propTypes = {
-      value: PropTypes.string
+      value: PropTypes.string,
+      height: PropTypes.string,
+      width: PropTypes.string
     }
 
     static defaultProps = {
-       value: ""
+       value: "",
+       height: "250px",
+       width: "500px"
     }
 
     constructor (props) {
-    super(props)
+      super(props)
       this.convertText = this.convertText.bind(this);
       this.copyText = this.copyText.bind(this);
     }
@@ -97,6 +92,17 @@ class InvitationEditor extends React.Component {
 
     render()
     {       
+        const { value, height, width } = this.props;
+
+        var invitationEditorTextAreaStyle = {
+             height: height,
+             width: width
+        }
+
+        var invitationEditorPreviewTextStyle = {
+             opacity: "0"
+        }
+
         return (<div>      
                 <select id="fontDropdown" onChange={this.convertText}>
                   <option value="Bold">Bold</option>
@@ -115,8 +121,10 @@ class InvitationEditor extends React.Component {
                 </select>
                 <br/>
                 <h5>Please enter your invite text here:</h5>
-                <textarea style={InvitationEditorTextAreaStyle}
-                 id="text" 
+                
+                <textarea 
+                 id="text"                 
+                 style={invitationEditorTextAreaStyle}
                  onChange={this.convertText}
                  defaultValue={this.props.value}>
                 </textarea>
@@ -127,15 +135,15 @@ class InvitationEditor extends React.Component {
                   onClick={this.copyText} 
                   className="submit-btn" value="Copy Invitation"/>
            
-                <textarea id="holdtext" style={InvitationEditorPreviewTextStyle}>
+                <textarea 
+                  id="holdtext" 
+                  style={invitationEditorPreviewTextStyle}>
                 </textarea>
 
                 <div id="previewText" ref='previewText'
-                style={InvitationEditorPreviewTextStyle}></div>
+                style={invitationEditorPreviewTextStyle}></div>
 
                 <div id='message'></div>
         </div>);
     }
 }
-
-export default InvitationEditor;

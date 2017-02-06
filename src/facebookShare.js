@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import objectToParams from './objectToParams';
 
-class FacebookShare extends React.Component 
+export default class FacebookShare extends React.Component 
 {
   static propTypes = {
     buttonStyle: PropTypes.object,
@@ -77,5 +77,3 @@ class FacebookShare extends React.Component
     );
   }
 }
-
-export default FacebookShare;

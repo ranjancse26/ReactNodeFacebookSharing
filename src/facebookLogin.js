@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import objectToParams from './objectToParams';
 
-class FacebookLogin extends React.Component {
+export default class FacebookLogin extends React.Component {
 
   static propTypes = {
     isDisabled: PropTypes.bool,
@@ -210,5 +210,3 @@ class FacebookLogin extends React.Component {
     );
   }
 }
-
-export default FacebookLogin;

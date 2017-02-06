@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import objectToParams from './objectToParams';
 
-class FacebookPrivateMessage extends React.Component 
+export default class FacebookPrivateMessage extends React.Component 
 {
   static propTypes = {
     buttonStyle: PropTypes.object,
@@ -75,5 +75,3 @@ class FacebookPrivateMessage extends React.Component
     );
   }
 }
-
-export default FacebookPrivateMessage;
