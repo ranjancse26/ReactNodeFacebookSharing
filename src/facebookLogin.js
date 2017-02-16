@@ -1,3 +1,5 @@
+// Reused code from - https://github.com/keppelen/react-facebook-login
+
 import React, { PropTypes } from 'react';
 import objectToParams from './objectToParams';
 

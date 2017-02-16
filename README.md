@@ -113,5 +113,10 @@ import InvitationEditor from '../src/invitationEditor'
    value={editorDefaultValue}/>
 ```
 
+## Reused code
+
+Note - The Facebook React Login component is reused from 
+https://github.com/keppelen/react-facebook-login
+
 
 
